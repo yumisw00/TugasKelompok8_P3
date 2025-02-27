@@ -1,4 +1,4 @@
-# 🌟 UAS Kelompok 2 🌟
+# 🌟 UAS Kelompok 8 🌟
 
 ## 📂 Daftar Isi Folder
 - **Dokumen UAS** 📄
@@ -29,8 +29,8 @@ For detailed documentation, refer to the files linked below (written in Indonesi
 ## 🤝 Contributors
 | Contributor       | GitHub Profile                                  |
 |-------------------|------------------------------------------------|
-| **Adia Sandra**  | [🌐 Profile](https://github.com/sandraalmeera) |
-| **Yessica**      | [🌐 Profile](https://github.com/yesicafapa)    |
+| **Zakarya80**  | [🌐 Profile](https://github.com/Zakarya80) |
+| **IisIstiqomah31**      | [🌐 Profile](https://github.com/IisIstiqomah31)    |
 
 ---
 
