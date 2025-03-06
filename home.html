@@ -3,63 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Toko Bu Sarpi</title>
+    <title>Home - Toko Bu Sarpi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .custom-header {
+            background: linear-gradient(to right, #007bff, #00c6ff);
+        }
+    </style>
 </head>
 <body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <nav class="bg-dark text-white p-3" style="width: 200px; height: 100vh;">
-            <h3>Toko Bu Sarpi</h3>
-            <ul class="nav flex-column">
-                <li class="nav-item"><a href="#" class="nav-link text-white">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-white">Produk</a></li>
-            </ul>
-        </nav>
-        
-        <!-- Main Content -->
-        <div class="container-fluid p-4">
-            <h2>Home</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card text-white bg-primary mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Total Penjualan</h5>
-                            <p class="card-text">Rp 10.000.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card text-white bg-success mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Total Produk</h5>
-                            <p class="card-text">500</p>
-                        </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Kelontong Bu Sarpi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="custom-header text-white text-center py-5">
+        <h1>Selamat Datang di Toko Bu Sarpi</h1>
+        <p>Toko Bu Sarpi Terlengkap dan Terjangkau</p>
+    </header>
+    
+    <div class="container my-5">
+        <h2 class="text-center">Produk Unggulan</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Beras">
+                    <div class="card-body">
+                        <h5 class="card-title">Beras 5kg</h5>
+                        <p class="card-text">Rp 60.000</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Daftar Produk Terbaru -->
-            <h3>Produk Terbaru</h3>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Nama Produk</th>
-                        <th>Harga</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Gula 1kg</td>
-                        <td>Rp 14.000</td>
-                    </tr>
-                    <tr>
-                        <td>Minyak Goreng 1L</td>
-                        <td>Rp 18.000</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Minyak Goreng">
+                    <div class="card-body">
+                        <h5 class="card-title">Minyak Goreng 1L</h5>
+                        <p class="card-text">Rp 18.000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Gula Pasir">
+                    <div class="card-body">
+                        <h5 class="card-title">Gula Pasir 1kg</h5>
+                        <p class="card-text">Rp 15.000</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Toko Bu Sarpi. Semua Hak Dilindungi.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
