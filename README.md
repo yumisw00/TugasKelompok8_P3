@@ -1,11 +1,11 @@
-# 🌟 UAS Kelompok 2 🌟
+# 🌟 Kelompok 8 🌟
 
 ## 📂 Daftar Isi Folder
-- **Dokumen UAS** 📄
-  - 📘 Dokumentasi Awal Proyek Pengembangan Basis Data Toko Risky Bawang dan Palawija.pdf
-  - 📙 Fitur Database[1].pdf
-  - 📗 LAPORAN TUGAS UAS kelompok 2.pdf
-  - 📕 MANUAL PENGGUNAAN SISTEM MANAJEMEN.pdf
+- **Dokumen** 📄
+  - 📘 login.html
+  - 📙 home.html
+  - 📗 katalog.html
+  - 📕 README.md
 - **Folder Basic** 📁
   - 🔧 Codingan composer
 
@@ -19,18 +19,18 @@
 ## Documentation
 For detailed documentation, refer to the files linked below (written in Indonesian):
 
-- 📘 [Dokumen Awal Proyek](#)
-- 📙 [Fitur Basis Data](#)
-- 📗 [Laporan Tugas UAS](#)
-- 📕 [Manual Penggunaan Sistem](#)
+- 📘 [login.html](#)
+- 📙 [home.html](#)
+- 📗 [katalog.html](#)
+- 📕 [README.md](#)
 
 ---
 
 ## 🤝 Contributors
-| Contributor       | GitHub Profile                                  |
-|-------------------|------------------------------------------------|
-| **Adia Sandra**  | [🌐 Profile](https://github.com/sandraalmeera) |
-| **Yessica**      | [🌐 Profile](https://github.com/yesicafapa)    |
+| Contributor         | GitHub Profile                                    |
+|---------------------|---------------------------------------------------|
+| **Zakarya80**       | [🌐 Profile](https://github.com/Zakarya80)        |
+| **IisIstiqomah31**  | [🌐 Profile](https://github.com/IisIstiqomah31)   |
 
 ---
 
@@ -48,7 +48,7 @@ We hope this repository provides a clear understanding of our project. 😊
 ## 🚀 How to Use
 1. Clone this repository locally:
    ```bash
-   git clone https://github.com/AbidRafiul/UAS_Kelompok2.git
+   git clone https://github.com/yumisw00/TugasKelompok8_P3.git
    ```
 2. Open the document files in the "Dokumen UAS" folder.
 3. Follow the system usage manual for further information.
