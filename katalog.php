@@ -1,4 +1,8 @@
-<?php // katalog.php ?>
+<?php
+// katalog.php
+include 'koneksi.php'; // file koneksi ke database
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -80,14 +84,42 @@
 </header>
 
 <!-- Input Pencarian -->
+<!-- Tombol Kelola Produk + Input Pencarian -->
 <div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <div></div>
+    <a href="crud_produk.php" class="btn btn-warning">Kelola Produk</a>
+  </div>
   <input type="text" id="cariProduk" class="form-control" placeholder="Cari produk...">
 </div>
 
 <!-- Katalog Produk -->
 <div class="container my-4">
   <div class="row g-4" id="produkContainer">
-    <!-- Produk akan dimuat melalui JavaScript -->
+    <?php
+    $query = "SELECT * FROM barang ORDER BY nama_barang ASC";
+    $result = $conn->query($query);
+
+    if ($result && $result->num_rows > 0):
+      while ($row = $result->fetch_assoc()):
+        $nama = $row['nama_barang'];
+        $harga = $row['harga_jual'];
+        $gambar = $row['gambar'] ?? 'gambar/default.jpg'; // gunakan default jika kolom gambar kosong
+    ?>
+    <div class="col-md-3 col-sm-6 produk-item">
+      <div class="produk text-center">
+        <img src="<?= $gambar ?>" alt="<?= htmlspecialchars($nama) ?>">
+        <h3><?= htmlspecialchars($nama) ?></h3>
+        <p>Rp <?= number_format($harga, 0, ',', '.') ?></p>
+        <button onclick='tambahKeKeranjang(<?= json_encode(["nama" => $nama, "harga" => $harga, "gambar" => $gambar]) ?>)'>Tambah Ke Keranjang</button>
+      </div>
+    </div>
+    <?php
+      endwhile;
+    else:
+    ?>
+      <p class="text-center">Produk tidak tersedia.</p>
+    <?php endif; ?>
   </div>
 </div>
 
@@ -97,59 +129,22 @@
 </footer>
 
 <script>
-  const produkList = [
-    { nama: "Minyak Goreng", harga: 17500, gambar: "gambar/Minyak_Goreng.jpg" },
-    { nama: "Indomie", harga: 3500, gambar: "gambar/Indomie.jpg" },
-    { nama: "Gula", harga: 15000, gambar: "gambar/Gula.jpg" },
-    { nama: "Susu", harga: 4500, gambar: "gambar/Susu.jpeg" },
-    { nama: "Sirup", harga: 18000, gambar: "gambar/sirup.jpg" },
-    { nama: "Kecap", harga: 3000, gambar: "gambar/kecap.jpeg" },
-    { nama: "Saus", harga: 8000, gambar: "gambar/saus.jpg" },
-    { nama: "Royco", harga: 2000, gambar: "gambar/royco.jpg" }
-  ];
-
-  const produkContainer = document.getElementById('produkContainer');
-  const inputCari = document.getElementById('cariProduk');
-
-  function tampilkanProduk(filter = "") {
-    produkContainer.innerHTML = "";
-    const hasil = produkList.filter(p =>
-      p.nama.toLowerCase().includes(filter.toLowerCase())
-    );
-
-    if (hasil.length === 0) {
-      produkContainer.innerHTML = "<p class='text-center'>Produk tidak ditemukan.</p>";
-      return;
-    }
-
-    hasil.forEach(produk => {
-      const col = document.createElement('div');
-      col.className = 'col-md-3 col-sm-6';
-      col.innerHTML = `
-        <div class="produk text-center">
-          <img src="${produk.gambar}" alt="${produk.nama}">
-          <h3>${produk.nama}</h3>
-          <p>Rp ${produk.harga.toLocaleString('id-ID')}</p>
-          <button onclick='tambahKeKeranjang(${JSON.stringify(produk)})'>Tambah Ke Keranjang</button>
-        </div>
-      `;
-      produkContainer.appendChild(col);
-    });
-  }
-
   function tambahKeKeranjang(produk) {
     let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
     keranjang.push(produk);
     localStorage.setItem('keranjang', JSON.stringify(keranjang));
-    alert(`${produk.nama} ditambahkan ke keranjang!`);
+    alert(${produk.nama} ditambahkan ke keranjang!);
   }
 
-  // Inisialisasi awal
-  tampilkanProduk();
+  // Filter produk lokal di halaman (JS hanya menyembunyikan, bukan mengambil ulang dari server)
+  document.getElementById('cariProduk').addEventListener('input', function () {
+    const keyword = this.value.toLowerCase();
+    const items = document.querySelectorAll('.produk-item');
 
-  // Event: pencarian
-  inputCari.addEventListener('input', () => {
-    tampilkanProduk(inputCari.value);
+    items.forEach(item => {
+      const namaProduk = item.querySelector('h3').textContent.toLowerCase();
+      item.style.display = namaProduk.includes(keyword) ? 'block' : 'none';
+    });
   });
 </script>
 
